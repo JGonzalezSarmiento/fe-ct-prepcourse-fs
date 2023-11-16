@@ -3,34 +3,50 @@
 function devolverPrimerElemento(array) {
    // Retornar el primer elemento del arreglo recibido por parámetro.
    // Tu código:
+      var primerElmento = array.shift();
+         return primerElmento;
+
 }
 
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
+   var ultimoElemento = array.pop();
+      return ultimoElemento;
 }
 
 function obtenerLargoDelArray(array) {
    // Retornar la longitud del arreglo recibido por parámetro.
    // Tu código:
+      return  array.length;
+     
 }
 
 function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
+   for (let i = 0; i < array.length; i++) {
+      array[i] +=1;
+   }
+      return array;
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
    // Agrega el "elemento" al final del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
+   let agregarAlFinal = array.push(elemento);
+      return array;
+
 }
 
 function agregarItemAlComienzoDelArray(array, elemento) {
    // Agrega el "elemento" al comienzo del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
+   let agregarAlInicio = array.unshift(elemento);
+      return array;
 }
 
 function dePalabrasAFrase(palabras) {
@@ -39,43 +55,90 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
-}
+      return palabras.join(" ");
+   }
 
 function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
+     // return array.includes(elemento);
+     let estaElElemento = false;
+
+     for (let i = 0; i < array.length; i++) {
+        if (array[i] === elemento) {
+         estaElElemento = true;
+        }
+      }
+      return estaElElemento;
 }
+
+   
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
+      var numeros = 0;
+   
+      for (let i = 0; i < arrayOfNums.length; i++) {
+         numeros += arrayOfNums[i];         
+      }
+      return numeros;
 }
 
 function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
+   var numeros = 0;
+   
+      for (let i = 0; i < resultadosTest.length; i++) {
+         numeros += resultadosTest[i];         
+      }
+      return numeros / resultadosTest.length;
 }
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
-}
+      let numeroMasGrande = 0;
+
+      for (let i = 0; i < arrayOfNums.length; i++) {
+         if (arrayOfNums[i] > numeroMasGrande) {
+            numeroMasGrande = arrayOfNums[i]
+         }
+      }
+      return numeroMasGrande;
+   }
+
+   //**Debo reforzar mas este tipo de ejercicios. No me quedo claro */
+
 
 function multiplicarArgumentos() {
    // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto.
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   if (arguments.length === 0) {
+      return 0;
+   }
+   let resultado = 1;
+      for (let i = 0; i < arguments.length; i++) {
+         resultado *= arguments[i];
+      }
+      return resultado;
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+   var cuentoElementos = numeros.map((array) => {
+      return array > 18;
+   });
 }
+
 
 function diaDeLaSemana(numeroDeDia) {
    // Supongamos que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente.
