@@ -72,7 +72,6 @@ function arrayContiene(array, elemento) {
       }
       return estaElElemento;
 }
-
    
 
 function agregarNumeros(arrayOfNums) {
@@ -123,20 +122,40 @@ function multiplicarArgumentos() {
    // Tu código:
    if (arguments.length === 0) {
       return 0;
-   }
+   } else {
    let resultado = 1;
       for (let i = 0; i < arguments.length; i++) {
-         resultado *= arguments[i];
+         resultado = resultado * arguments[i];
       }
       return resultado;
+   }
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
-   var cuentoElementos = numeros.map((array) => {
-      return array > 18;
-   });
+  var contador = 0;
+
+  for (let i = 0; i < array.length; i++) {
+   if (18 < array[i]) {
+      contador = contador + 1;
+      } 
+   }
+   return contador;
+
+   // let arr = [];
+
+   // for (let i = 0; i < array.length; i++) {
+   //    if (18 < array[i]) {
+   //       arr = array.push(array[i]);
+   //    }
+   // } 
+   // return arr;
+   /*
+   const arrayMayorA18 = array.filter((i) => >18);
+   
+   return arrayMayorA18.length; 
+   */
 }
 
 
@@ -145,38 +164,78 @@ function diaDeLaSemana(numeroDeDia) {
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
+   
+         if (numeroDeDia === 1 || numeroDeDia === 7) {
+            return "Es fin de semana";
+         }
+      return "Es dia laboral";
 }
 
-function empiezaConNueve(num) {
+function empiezaConNueve(num) { 
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+   let empiezaConNueve = num.toString();
+   if (empiezaConNueve.charAt(0) === '9') {
+      return true;
+   } else return false;
+   /*  let strNum = num.toString();
+   return strNum[0] === "9?";*/
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+    return array.every(elem => elem === array[0]);
 }
+
 
 function mesesDelAño(array) {
    // El arreglo contiene algunos meses del año desordenados. Debes recorrerlo, buscar los meses "Enero",
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
-}
+      const mesesPerdidos = ["Enero", "Marzo", "Noviembre"];
+      const mesesEncontrados = array.filter((mes => mesesPerdidos.includes(mes)));
+
+      if (mesesEncontrados.length === mesesPerdidos.length){
+         return mesesEncontrados;
+      } else {
+            return "No se encontraron los meses pedidos";
+         }
+      }
+
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   // ESTO ES SOLO PARA MI: es como hacer una tabla de cualquier numero y hasta cualquier limite
+   // function generarTabla(multiplicando, limite) {
+   //    const tabla =[];
+   //    for (let multiplicador = 0; multiplicador <= limite; multiplicador++) {
+   //       tabla.push(multiplicando * multiplicador;
+   //    } return tabla;
+   // }
+   var tabla = [];
+     for (let i = 0; i <= 10; i++) {
+      tabla.push(6 * i);
+   } return tabla;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
-}
+      return array.filter(valor => valor > 100);
+      /* 
+      let mayorACien = [];
+      for (i = 0; i < array.length; i++) {
+         if (array[i] > 100) mayorACien.push(array[i]);
+         return mayorACien;
+      }*/
+   }
 
 /* ----------------------------------------------------------------------------------
 💪 EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT  EXTRA CREDIT 💪
@@ -189,7 +248,22 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
-}
+   
+   let almacen = [];
+           
+         for (let i = 0; i < 10; i++) {
+            (num = num + 2); 
+            almacen.push(num);
+                          
+            if (i === num) {
+              return ("Se interrumpió la ejecución");
+               break;
+            }
+         }  
+         return (almacen);
+  }
+
+
 
 function continueStatement(num) {
    // Iterar en un bucle aumentando en 2 el número recibido hasta un límite de 10 veces.
@@ -198,7 +272,17 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+      let arr = [];
+   for (let i = 0; i < 10; i++) {
+      if (i === 5) {
+         continue;
+        } 
+      num += 2;
+      arr.push(num);
+   }
+   return arr;
 }
+
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
@@ -223,4 +307,4 @@ module.exports = {
    mayorACien,
    breakStatement,
    continueStatement,
-};
+}
