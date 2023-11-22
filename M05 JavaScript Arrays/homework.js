@@ -3,33 +3,35 @@
 function devolverPrimerElemento(array) {
    // Retornar el primer elemento del arreglo recibido por parámetro.
    // Tu código:
-      var primerElmento = array.shift();
-         return primerElmento;
-
-}
+      // var primerElmento = array.shift();
+      //    return primerElmento;
+   return array[0];
+   }
 
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
-   var ultimoElemento = array.pop();
-      return ultimoElemento;
+   // var ultimoElemento = array.pop();
+   //    return ultimoElemento;
+   return array.pop("");
 }
 
 function obtenerLargoDelArray(array) {
    // Retornar la longitud del arreglo recibido por parámetro.
    // Tu código:
       return  array.length;
-     
 }
 
 function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
-   for (let i = 0; i < array.length; i++) {
-      array[i] +=1;
-   }
-      return array;
+   // for (let i = 0; i < array.length; i++) {
+   //    array[i] +=1;
+   // }
+   //    return array;
+
+      return array.map(num => {return num +1});
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -62,15 +64,17 @@ function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
-     // return array.includes(elemento);
-     let estaElElemento = false;
+   //   // return array.includes(elemento);
+   //   let estaElElemento = false;
 
-     for (let i = 0; i < array.length; i++) {
-        if (array[i] === elemento) {
-         estaElElemento = true;
-        }
-      }
-      return estaElElemento;
+   //   for (let i = 0; i < array.length; i++) {
+   //      if (array[i] === elemento) {
+   //       estaElElemento = true;
+   //      }
+   //    }
+   //    return estaElElemento;
+      const incluyeElemento = array.includes(elemento);
+      if (incluyeElemento != 0) {return true} else return false;
 }
    
 
@@ -102,14 +106,15 @@ function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
-      let numeroMasGrande = 0;
+      // let numeroMasGrande = 0;
 
-      for (let i = 0; i < arrayOfNums.length; i++) {
-         if (arrayOfNums[i] > numeroMasGrande) {
-            numeroMasGrande = arrayOfNums[i]
-         }
-      }
-      return numeroMasGrande;
+      // for (let i = 0; i < arrayOfNums.length; i++) {
+      //    if (arrayOfNums[i] > numeroMasGrande) {
+      //       numeroMasGrande = arrayOfNums[i]
+      //    }
+      // }
+      // return numeroMasGrande;
+      return Math.max(...arrayOfNums)
    }
 
    //**Debo reforzar mas este tipo de ejercicios. No me quedo claro */
@@ -138,7 +143,9 @@ function cuentoElementos(array) {
 
   for (let i = 0; i < array.length; i++) {
    if (18 < array[i]) {
-      contador = contador + 1;
+      // contador = contador + 1;
+      // contador+=1;
+      contador++
       } 
    }
    return contador;
@@ -165,22 +172,33 @@ function diaDeLaSemana(numeroDeDia) {
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
    
-         if (numeroDeDia === 1 || numeroDeDia === 7) {
-            return "Es fin de semana";
-         }
-      return "Es dia laboral";
-}
+         if (numeroDeDia === 1 || numeroDeDia === 7) return "Es fin de semana";
+         return "Es dia laboral";
+      // switch (numeroDeDia) {
+      //    case 1:
+      //    case 7:
+      //       return "Es fin de semana";
+      //    case 2:
+      //    case 3:
+      //    case 4:
+      //    case 5:
+      //    case 6:
+      //       return "Es dia laboral";
+      //    default: return "numero invalid"
+      }
+
 
 function empiezaConNueve(num) { 
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
-   let empiezaConNueve = num.toString();
-   if (empiezaConNueve.charAt(0) === '9') {
-      return true;
-   } else return false;
+   // let empiezaConNueve = num.toString();
+   // if (empiezaConNueve.charAt(0) === '9') return true;
+   // return false;
    /*  let strNum = num.toString();
    return strNum[0] === "9?";*/
+
+   return num.toString()[0] === '9' ? true : false;
 }
 
 function todosIguales(array) {
@@ -188,6 +206,7 @@ function todosIguales(array) {
    // Caso contrario retornar false.
    // Tu código:
     return array.every(elem => elem === array[0]);
+       
 }
 
 
@@ -199,11 +218,8 @@ function mesesDelAño(array) {
       const mesesPerdidos = ["Enero", "Marzo", "Noviembre"];
       const mesesEncontrados = array.filter((mes => mesesPerdidos.includes(mes)));
 
-      if (mesesEncontrados.length === mesesPerdidos.length){
-         return mesesEncontrados;
-      } else {
-            return "No se encontraron los meses pedidos";
-         }
+      if (mesesEncontrados.length === mesesPerdidos.length) return mesesEncontrados;
+      return "No se encontraron los meses pedidos";
       }
 
 
