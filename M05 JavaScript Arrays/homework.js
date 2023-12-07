@@ -82,7 +82,7 @@ function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
-      var numeros = 0;
+      let numeros = 0;
    
       for (let i = 0; i < arrayOfNums.length; i++) {
          numeros += arrayOfNums[i];         

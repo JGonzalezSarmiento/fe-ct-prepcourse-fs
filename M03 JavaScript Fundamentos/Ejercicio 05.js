@@ -16,7 +16,9 @@ function esPositivo(num) {
          else {
          return false;
       }
+     // return num > 0 ? 'Es positivo' : num < 0 ? 'Es negativo' : false;
    }
+   
   
 
 function agregarSimboloExclamacion(str) {
