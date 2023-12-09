@@ -1,0 +1,68 @@
+/* Reset CSS */
+
+/* Box sizing border-box para todos los elementos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Eliminar márgenes y rellenos predeterminados */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+margin,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Asegurar que los elementos de lista tengan estilos consistentes y no estén decorados */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Asegurar que los estilos de encabezado no varíen entre navegadores */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+/* Asegurar texto y enlaces con colores predeterminados no resaltados en la mayoría de los navegadores */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Eliminar el subrayado del enlace en navegadores más antiguos */
+a:hover {
+  text-decoration: none;
+}
+
+/* Eliminar estilos de borde y resaltar el enlace al hacer clic */
+a:focus {
+  outline: none;
+}
+
+/* Restablecer estilos de imagen */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

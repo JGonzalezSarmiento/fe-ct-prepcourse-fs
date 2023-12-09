@@ -1,0 +1,66 @@
+body{
+    background-color: rgb(233, 177, 137);
+}
+
+.title{
+    font-size: 3em;
+    color: crimson;
+}
+
+
+.logo{
+    width: 300px;
+    height: 300px;
+}
+
+.cards{
+    border: 2px solid black;
+    width: fit-content; /* ajusto el ancho, al ancho de mi contenido */
+    padding: 1em 1em 2em 1em; /*arriba, derecha , abajo, izquierda */
+    border-radius: 10%; /*redondea los bordes */
+    transition: 1s; /*esto indica que la transición del hover, ya no sea instantaneo, si no que dure lo que le indico*/
+    display: flex;/*pero al darle esta indicación, todos los elementos se posicionan en fila*/
+    flex-direction: column; /*para que se vean en columna*/
+    gap: 2em; /*pequeño espacio que se le da a los elementos entre si*/
+    align-items: center;/*centra todos elementos*/
+}
+
+.cards:hover{
+    background-color: rgb(151, 244, 222); /*esto se activa cuando paso el mouse por encima del elemento */
+}
+
+.not{
+    width: 1500px;
+    height: 200px;
+}
+
+#principal{
+    font-size: 70px;
+}
+
+#titulos{
+    
+    /* viewport width */
+    width: 60vw;
+    margin: auto; /* me ajusto al ancho de la pantalla desde donde me observan */
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#cards-container{
+    background-color: cornflowerblue;
+    width: 85vw; /*ancho de la caja contenedora 85% de la pantalla donde se vea */
+    margin: auto; /* se centro la caja en la mitad de la pantalla */
+    margin-top: 1.5em; /* se despega la caja del texto superior */
+    border: 2px solid rgb(113, 99, 99);
+    border-radius: 15px; /*se pueden expresar en px(medidas absolutas) o en %*/
+    padding: 2em; /*si le doy un solo valor, se cumple para los 4 lados*/
+    display: flex; /*va a seguir la logica de flex, para posicionar el contenido*/
+    flex-direction: row; /*posiciona los elementos en una fila*/
+    justify-content: space-evenly;/*posiciona los elementos tienen la misma distancia con respecto a ellos y a los bordes */
+
+
+}
